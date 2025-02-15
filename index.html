@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LGS Deneme Takip Sistemi</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+  <button class="logout-button" onclick="logout()">Çıkış Yap</button>
+  <div class="container">
+    <h1>LGS Deneme Takip Sistemi</h1>
+    <form id="denemeForm">
+      <div class="input-group">
+        <label for="exam-name"><i class="fas fa-edit"></i> Deneme İsmi:</label>
+        <input type="text" id="exam-name" name="exam-name" placeholder="Deneme İsmi" required>
+      </div>
+      <div class="input-group">
+        <label for="exam-date"><i class="fas fa-calendar-alt"></i> Deneme Tarihi:</label>
+        <input type="date" id="exam-date" name="exam-date" required>
+      </div>
+      <div class="input-group">
+        <label for="turkish"><i class="fas fa-book"></i> Türkçe:</label>
+        <div class="input-subgroup">
+          <i class="fas fa-check-circle correct-icon"></i>
+          <input type="number" id="turkish-correct" name="turkish-correct" min="0" max="20" placeholder="Doğru" required>
+          <i class="fas fa-times-circle wrong-icon"></i>
+          <input type="number" id="turkish-wrong" name="turkish-wrong" min="0" max="20" placeholder="Yanlış" required>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="history"><i class="fas fa-landmark"></i> T.C. İnkılap Tarihi:</label>
+        <div class="input-subgroup">
+          <i class="fas fa-check-circle correct-icon"></i>
+          <input type="number" id="history-correct" name="history-correct" min="0" max="10" placeholder="Doğru" required>
+          <i class="fas fa-times-circle wrong-icon"></i>
+          <input type="number" id="history-wrong" name="history-wrong" min="0" max="10" placeholder="Yanlış" required>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="religion"><i class="fas fa-praying-hands"></i> Din Kültürü:</label>
+        <div class="input-subgroup">
+          <i class="fas fa-check-circle correct-icon"></i>
+          <input type="number" id="religion-correct" name="religion-correct" min="0" max="10" placeholder="Doğru" required>
+          <i class="fas fa-times-circle wrong-icon"></i>
+          <input type="number" id="religion-wrong" name="religion-wrong" min="0" max="10" placeholder="Yanlış" required>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="english"><i class="fas fa-language"></i> Yabancı Dil:</label>
+        <div class="input-subgroup">
+          <i class="fas fa-check-circle correct-icon"></i>
+          <input type="number" id="english-correct" name="english-correct" min="0" max="10" placeholder="Doğru" required>
+          <i class="fas fa-times-circle wrong-icon"></i>
+          <input type="number" id="english-wrong" name="english-wrong" min="0" max="10" placeholder="Yanlış" required>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="maths"><i class="fas fa-square-root-alt"></i> Matematik:</label>
+        <div class="input-subgroup">
+          <i class="fas fa-check-circle correct-icon"></i>
+          <input type="number" id="maths-correct" name="maths-correct" min="0" max="20" placeholder="Doğru" required>
+          <i class="fas fa-times-circle wrong-icon"></i>
+          <input type="number" id="maths-wrong" name="maths-wrong" min="0" max="20" placeholder="Yanlış" required>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="science"><i class="fas fa-flask"></i> Fen Bilimleri:</label>
+        <div class="input-subgroup">
+          <i class="fas fa-check-circle correct-icon"></i>
+          <input type="number" id="science-correct" name="science-correct" min="0" max="20" placeholder="Doğru" required>
+          <i class="fas fa-times-circle wrong-icon"></i>
+          <input type="number" id="science-wrong" name="science-wrong" min="0" max="20" placeholder="Yanlış" required>
+        </div>
+      </div>
+      <div class="button-group">
+        <button type="submit"><i class="fas fa-calculator"></i> Hesapla</button>
+        <a href="results.html" class="results-button"><i class="fas fa-list"></i> Sonuçları Gör</a>
+        <a href="charts.html" class="results-button"><i class="fas fa-chart-bar"></i> Grafikler</a>
+      </div>
+    </form>
+    <div id="result" class="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #243B55, #141E30);
+  color: #FFFFFF;
+  overflow: auto;
+}
+
+.login-container, .container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.5px);
+  -webkit-backdrop-filter: blur(8.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  animation: textGlow 1.5s ease-in-out infinite;
+}
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #FFFFFF;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.input-subgroup {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"]:nth-child(2n+1) {
+  border: 2px solid #28a745;
+  color: #28a745;
+}
+
+input[type="number"]:nth-child(2n+2) {
+  border: 2px solid #dc3545;
+  color: #dc3545;
+}
+
+input[type="number"]:nth-child(2n+1):focus,
+input[type="number"]:nth-child(2n+2):focus {
+  outline: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+button, .results-button, .back-button, .logout-button, .download-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #FFD700;
+  color: #141E30;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  width:200px; /* Eşit boyutta olması için min-width ayarlandı */
+}
+
+button:hover, .results-button:hover, .back-button:hover, .logout-button:hover, .download-button:hover {
+  background-color: #FFC700;
+  transform: scale(1.05);
+}
+
+button i, .results-button i, .back-button i, .logout-button i, .download-button i {
+  margin-right: 5px;
+}
+
+.result, .results {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s;
+}
+
+.correct {
+  color: #28a745;
+}
+
+.wrong {
+  color: #dc3545;
+}
+
+.correct-icon, .wrong-icon {
+  margin-right: 5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700, 0 0 60px #FFD700; }
+  50% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700, 0 0 60px #FFD700, 0 0 70px #FFD700; }
+  100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700, 0 0 40px #FFD700, 0 0 50px #FFD700, 0 0 60px #FFD700; }
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-group button,
+.button-group .results-button,
+.button-group .back-button {
+  flex: 1;
+  margin: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+}
